@@ -1,0 +1,37 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <h1 id="nadpis"></h1>
+
+
+
+<script src="https://www.gstatic.com/firebasejs/5.5.9/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+    apiKey: "AIzaSyCjjaVISvoApcd7CBCtwqxErLqRjCePUcM",
+    authDomain: "helloworld-c0508.firebaseapp.com",
+    databaseURL: "https://helloworld-c0508.firebaseio.com",
+    projectId: "helloworld-c0508",
+    storageBucket: "helloworld-c0508.appspot.com",
+    messagingSenderId: "804244650729"
+    };
+    firebase.initializeApp(config);
+
+    var nadpis = document.getElementById('nadpis');
+    var dbRef = firebase.database().ref().child('text');
+    dbRef.on('value', snap => nadpis.innerText = snap.val());
+    
+</script>
+
+
+</body>
+</html>
